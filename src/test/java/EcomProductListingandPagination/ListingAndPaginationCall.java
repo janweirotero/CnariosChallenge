@@ -44,11 +44,11 @@ public class ListingAndPaginationCall {
 
         String prodNameToLookFor = "WH-1000XM5";
         firstChallenge.click();
-        int count = paginationCounts.size();
+        int count = paginationCounts.size()-1;
 
         int x, countPage=0;
 
-        for (x =2; x<=6; x++) {
+        for (x =2; x<=count; x++) {
 
             WebElement paginationNum= driver.findElement(By.xpath("//ul[@class=\"MuiPagination-ul css-51eq8m\"]/li["+x+"]"));
             paginationNum.click();
