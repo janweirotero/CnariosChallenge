@@ -16,7 +16,7 @@ public class waitingCall {
     public waitingCall(WebDriver driver) {
         super();
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
 
@@ -30,5 +30,10 @@ public class waitingCall {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(unfollowButton));
 
+    }
+
+    public void waitForThePageToLoad(WebElement pageLoad){
+
+        wait.until(ExpectedConditions.visibilityOf(pageLoad));
     }
 }
