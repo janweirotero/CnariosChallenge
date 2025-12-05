@@ -35,11 +35,7 @@ public class ListingAndPaginationCall {
 
         int x, countPage = 0;
 
-<<<<<<< HEAD
-        for (x = 2; x <= count; x++) {
-=======
         for (x =2; x<=count; x++) {
->>>>>>> origin/master
 
             WebElement paginationNum = driver.findElement(By.xpath("//ul[@class=\"MuiPagination-ul css-51eq8m\"]/li[" + x + "]"));
             paginationNum.click();
