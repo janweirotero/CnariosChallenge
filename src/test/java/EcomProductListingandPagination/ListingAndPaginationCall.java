@@ -21,20 +21,21 @@ public class ListingAndPaginationCall {
     @FindBy(xpath = "(//button[@type='button'][normalize-space()='View Challenge'])[1]")
     WebElement firstChallenge;
 
-    @FindBy(xpath = "//div[@class=\"MuiCardContent-root flex flex-col space-y-3 css-15q2cw4\"]")
-    List<WebElement> cardContents;
-
     @FindBy(xpath = "//div[@class=\"MuiCardContent-root flex flex-col space-y-3 css-15q2cw4\"]/h6[@class=\"MuiTypography-root MuiTypography-h6 font-semibold css-1imvwru\"]")
     List<WebElement> prodNames;
+
+    @FindBy(xpath = "//ul[@class=\"MuiPagination-ul css-51eq8m\"]/li")
+    List<WebElement> paginationCounts;
 
     public void PLP_02() {
 
         String prodNameToLookFor = "WH-1000XM5";
         firstChallenge.click();
+        int count = paginationCounts.size()-1;
 
         int x, countPage = 0;
 
-        for (x = 2; x <= 6; x++) {
+        for (x = 2; x <= count; x++) {
 
             WebElement paginationNum = driver.findElement(By.xpath("//ul[@class=\"MuiPagination-ul css-51eq8m\"]/li[" + x + "]"));
             paginationNum.click();
@@ -64,7 +65,9 @@ public class ListingAndPaginationCall {
 
         int x;
 
-        for (x = 2; x<= 6; )
+        for (x = 2; x<= 6; ){
+
+        }
 
 
     }
