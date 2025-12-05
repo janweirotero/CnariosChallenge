@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/Cnarios">
+        <classes>
+            <class name="EcomProductListingandPagination.ListingAndPaginationTestCases">
+                <methods>
+                    <include name="PLP_02"/>
+                </methods>
+            </class>
+            <class name="Practice_Buttons.Buttons_Test_Cases">
+                <methods>
+                    <include name="BTN_001"/>
+                    <include name="BTN_002"/>
+                    <include name="BTN_003"/>
+                    <include name="BTN_004"/>
+                    <include name="BTN_005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

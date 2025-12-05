@@ -27,12 +27,11 @@ public class BrowserConfiguration {
         //System.getProperty to get the value in the system
         String browserName = prop.getProperty("browser");
 
-        if (browserName.equalsIgnoreCase("chrome")){
+        if (browserName.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver();
             driver = new ChromeDriver();
-        }
-        else if (browserName.equalsIgnoreCase("firefox")){
+        } else if (browserName.equalsIgnoreCase("firefox")) {
 
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
@@ -57,13 +56,11 @@ public class BrowserConfiguration {
 
     }
 
-    /*@AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
 
         driver.quit();
-    }*/
-
-
+    }
 
 
 }

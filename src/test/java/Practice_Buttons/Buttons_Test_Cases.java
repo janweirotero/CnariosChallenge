@@ -9,7 +9,7 @@ public class Buttons_Test_Cases extends BrowserConfiguration {
     ButtonsCall buttonsObj;
 
     @Test
-    public void BTN_001(){
+    public void BTN_001() {
 
         buttonsObj = new ButtonsCall(driver);
         boolean check = buttonsObj.button_001();
@@ -35,7 +35,7 @@ public class Buttons_Test_Cases extends BrowserConfiguration {
     }
 
     @Test
-    public void BTN_004(){
+    public void BTN_004() {
 
         buttonsObj = new ButtonsCall(driver);
         buttonsObj.button_004();
@@ -43,7 +43,7 @@ public class Buttons_Test_Cases extends BrowserConfiguration {
     }
 
     @Test
-    public void BTN_005(){
+    public void BTN_005() {
 
         buttonsObj = new ButtonsCall(driver);
         buttonsObj.button_005();
