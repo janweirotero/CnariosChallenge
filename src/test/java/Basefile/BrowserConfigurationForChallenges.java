@@ -56,7 +56,7 @@ public class BrowserConfigurationForChallenges {
 
     }
 
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     public void closeBrowser(){
 
         driver.quit();
