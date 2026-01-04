@@ -6,12 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 public class ListingAndPaginationCall extends waitingCall {
@@ -36,6 +32,9 @@ public class ListingAndPaginationCall extends waitingCall {
     @FindBy(xpath = "//div[@class=\"MuiCardContent-root flex flex-col space-y-3 css-15q2cw4\"]/h6[@class=\"MuiTypography-root MuiTypography-h6 font-semibold css-1imvwru\"]/following-sibling::p[1]")
     List<WebElement> getCategoryList;
 
+    @FindBy(xpath = "//div[@class=\"MuiCardContent-root flex flex-col space-y-3 css-15q2cw4\"]/h6[@class=\"MuiTypography-root MuiTypography-h6 font-semibold css-1imvwru\"]/following-sibling::span[1]")
+    WebElement getTheStarsCount;
+
     @FindBy(xpath = "//button[normalize-space()='Next']")
     WebElement nextButton;
 
@@ -44,8 +43,6 @@ public class ListingAndPaginationCall extends waitingCall {
 
     @FindBy(xpath = "//button[normalize-space()='5']")
     WebElement lastButton;
-
-   // By loadPage = By.xpath("");
 
 
     public void PLP_02() {
@@ -63,7 +60,7 @@ public class ListingAndPaginationCall extends waitingCall {
 
             //.map is to List of the strings you want to get
             //.filter is to filter the text you want
-            //scan every page if there is a product name that contains prodtolookfor then get it real name
+            //scan every page if there is a product name that contains prodtolookfor then get its real name
             Optional<String> getRealName = prodNames.stream()
                     .map(WebElement::getText)
                     .filter(text -> text.contains(prodNameToLookFor))
@@ -83,7 +80,7 @@ public class ListingAndPaginationCall extends waitingCall {
     }
 
 
-    public void PLP_03(){
+    public void PLP_01(){
 
         int x, books=0, clothing=0,home=0,sports=0,electronics=0;
         String[] categoryNames = {"Books","Clothing","Home","Sports","Electronics"};
@@ -97,9 +94,6 @@ public class ListingAndPaginationCall extends waitingCall {
             paginationNum.click();
 
             for (WebElement category : getCategoryList) {
-
-                waitingCall waitObject = new waitingCall(driver);
-                waitObject.waitForThePageToLoad(loadPage);
 
                 String[] getTextCategory = category.getText().split(":");
                 String wordPerCategory = getTextCategory[1].trim();
@@ -136,6 +130,7 @@ public class ListingAndPaginationCall extends waitingCall {
 
 
     }
+
 
 
 }
