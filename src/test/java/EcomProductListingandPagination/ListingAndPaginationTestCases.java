@@ -18,10 +18,10 @@ public class ListingAndPaginationTestCases extends BrowserConfigurationForChalle
 
 
     @Test
-    public void PLP_03(){
+    public void PLP_01(){
 
         LPLObject = new ListingAndPaginationCall(driver);
-        LPLObject.PLP_03();
+        LPLObject.PLP_01();
 
     }
 
