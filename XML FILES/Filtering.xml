@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/Cnarios/src/test/java/EcomProductFiltering/FilteringTestCases.java">
+        <classes><class name="EcomProductFiltering.FilteringTestCases">
+            <methods>
+                <exclude name="callPLP_01"/>
+                <include name="callPLP_02"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>

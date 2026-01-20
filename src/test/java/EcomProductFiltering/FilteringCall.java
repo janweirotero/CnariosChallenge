@@ -3,6 +3,7 @@ package EcomProductFiltering;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -32,6 +33,12 @@ public class FilteringCall extends waitingCall{
     @FindBy(xpath = "//p[@class=\"MuiTypography-root MuiTypography-body1 font-medium css-1o5u7u9\"]")
     List<WebElement> countItems;
 
+    @FindBy(xpath = "//span[@class='MuiSlider-rail css-1m3hq23']")
+    WebElement priceRange;
+
+    @FindBy(xpath = "//div[@class=\"border p-3 rounded-lg shadow-sm MuiBox-root css-0\"]")
+    List<WebElement> priceRangeResult;
+
 
 
     public void PLP_01(){
@@ -60,6 +67,30 @@ public class FilteringCall extends waitingCall{
 
         }
 
+    }
+
+
+    public void PLP_02(){
+
+        secondChallenge.click();
+
+        Actions act = new Actions(driver);
+        act.dragAndDropBy(priceRange,0,35).build().perform();
+
+        for (WebElement newPriceRange : priceRangeResult){
+
+            String [] itemNames = newPriceRange.getText().split("\n");
+            String [] itemPrice = itemNames[1].split("•");
+            String [] itemPrice2 = itemPrice[1].split("₹");
+            String finalItemPrice = itemPrice2[1].trim();
+            int price = Integer.parseInt(finalItemPrice);
+
+            if (price <= 28000){
+
+                System.out.println("The item "+itemNames[0]+ " is "+ price+" and it is below/equal the price range");
+            }
+
+        }
 
 
     }

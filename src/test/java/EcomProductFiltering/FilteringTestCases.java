@@ -15,6 +15,13 @@ public class FilteringTestCases extends BrowserConfigurationForChallenges {
 
     }
 
+    @Test
+    public void callPLP_02(){
+        FilObject = new FilteringCall(driver);
+        FilObject.PLP_02();
+
+    }
+
 
 
 

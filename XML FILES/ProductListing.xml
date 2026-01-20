@@ -10,8 +10,7 @@
         <classes>
             <class name="EcomProductListingandPagination.ListingAndPaginationTestCases">
                 <methods>
-                    <exclude name="PLP_02"/>
-                    <include name="PLP_03"/>
+                    <exclude name="PLP_01"/>
                 </methods>
             </class>
         </classes>
