@@ -8,7 +8,7 @@ public class ListingAndPaginationTestCases extends BrowserConfigurationForChalle
 
     ListingAndPaginationCall LPLObject;
 
-    @Test
+    @Test(groups = "ChallengeGroup")
     public void PLP_02() {
 
         LPLObject = new ListingAndPaginationCall(driver);
