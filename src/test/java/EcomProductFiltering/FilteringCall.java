@@ -140,13 +140,13 @@ public class FilteringCall extends waitingCall{
         secondChallenge.click();
         checkbox.click();
 
+        System.out.print("\n");
+
         for (WebElement newResultsCount : productResults)
         {
             String [] getTheText = newResultsCount.getText().split("\n");
             String getTheItemName = getTheText[0];
             String getTheItemStatus = getTheText[2].trim();
-
-            System.out.print("\n");
 
             if (getTheItemStatus.equalsIgnoreCase("in stock")){
                 System.out.println("The item " + getTheItemName+ "'s status is "+getTheItemStatus);
@@ -217,6 +217,8 @@ public class FilteringCall extends waitingCall{
             clickTheDropdown.click();
             clickElectronics.click();
 
+            System.out.print("\n");
+
             for (WebElement newResultsCount : productResults)
             {
                 String [] getTheText = newResultsCount.getText().split("\n");
@@ -225,8 +227,6 @@ public class FilteringCall extends waitingCall{
                 String getPrice = getOtherValues[1].trim();
                 String getLabel = getOtherValues[0].trim();
                 String getRate = getOtherValues[2].trim();
-
-                System.out.print("\n");
 
                 System.out.println("The Item name: "+ getTheItemName + "\n" +
                                      "The price: " + getPrice + "\n" +
