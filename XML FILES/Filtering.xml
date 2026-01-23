@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/Cnarios/src/test/java/EcomProductFiltering/FilteringTestCases.java">
-        <classes><class name="EcomProductFiltering.FilteringTestCases">
+<suite name="Filtering">
+    <test verbose="2" preserve-order="true" name="Filtering Challenge">
+        <classes>
+            <class name="EcomProductFiltering.FilteringTestCases">
             <methods>
-                <exclude name="callPLP_01"/>
+                <include name="callPLP_01"/>
                 <include name="callPLP_02"/>
+                <include name="callPLP_03"/>
+                <include name="callPLP_04"/>
+                <include name="callPLP_05"/>
+                <include name="callPLP_06"/>
             </methods>
-        </class>
+            </class>
         </classes>
     </test>
 </suite>
